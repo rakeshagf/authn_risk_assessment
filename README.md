@@ -1,6 +1,9 @@
 # CapStone Project : Module 20 - Initial Report and EDA
 Authentication Risk Assessment
 
+**Author**
+Rakesh Meena
+
 ### Project Title
 Authentication Risk Assessment
 
