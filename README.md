@@ -1,16 +1,20 @@
 # CapStone Project : Module 20 - Initial Report and EDA
+
+### Project Title
 Authentication Risk Assessment
 
 **Author**
 
 Rakesh Meena
 
-### Project Title
-Authentication Risk Assessment
 
 #### Link of notebook file
 
 https://github.com/rakeshagf/authn_risk_assessment/blob/main/capstone_part1/authn_risk_assessment_part1.ipynb
+
+#### Data Sources
+Source of dataset is customer login event logs from Customer Identity and Access Management (IAM) system.  I have removed unnecessary columns, anonymized (including synthetic values) data for select fields. 
+CSV file containing login events is named 'authn_event_logs.csv' and added to data folder.
 
 #### Executive summary
 Goal of capstone project is to analyze (EDA steps) data, train models and predict whether a login attempt is normal or anomalous.
@@ -30,9 +34,6 @@ predicting user login risk (low/high) for a new authentication attempt
 
 #### Rationale
 These models will be used to predict whether a login attempt is normal or anomalous. The ultimate goal is to enhance authentication risk assessment by providing insights to decide on whether to allow a user to log in with regular authentication, require additional strong authentication, or block/alert the authentication attempt.
-
-#### Data Sources
-I have access to customer login data from Customer Identity and Access Management (IAM) event logs.  I have removed unnecessary columns, anonymized (including synthetic values) data for select fields. CSV file containing login events is named 'authn_event_logs.csv' and added to data folder.
 
 #### Methodology
 I plan to leverage mix of unsupervised and supervised learning techniques for this exercise: 
