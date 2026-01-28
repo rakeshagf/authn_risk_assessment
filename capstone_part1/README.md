@@ -1,7 +1,6 @@
 # Capstone Project — Module 20: Initial Report and EDA
 
-#### Project Title
-Authentication Risk Assessment
+#### Project Title Authentication Risk Assessment
 
 Author: Rakesh Meena
 
@@ -47,11 +46,11 @@ Summary of Key Findings
 - A Random Forest trained to predict Isolation Forest labels achieved very high performance on the dataset used in Part 1; feature importance indicated `state_category` and `time_of_day` were the most informative features.
 
 
-#### Next steps (Part 2)
-- Re-evaluate Isolation Forest settings and contamination parameter.
-- Tune Random Forest (cross-validation, hyperparameter search) and add robust evaluation on holdout data.
-- Experiment with One-Class SVM and additional anomaly-detection techniques.
-- Add documentation and a final report summarizing insights and potential deployment considerations.
+#### Next steps (Part 2/Final Capstone submission)
+- Re-evaluate Isolation Forest settings and parameter tuning.
+- Tune Random Forest (cross-validation, hyperparameter search).
+- Implement One-Class SVM
+- Final report.
 
 ### License & author
 - Author: Rakesh Meena
