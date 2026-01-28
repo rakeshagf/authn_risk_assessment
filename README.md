@@ -47,7 +47,7 @@ One-Class SVM (Unsupervised)
 This part of project involved a comprehensive Exploratory Data Analysis (EDA) and initial unsupervised modeling to identify patterns and potential anomalies in login event data. The key findings are as follows:
 
 ### 1. Data Cleaning and Feature Engineering
-*   **Data Preparation**: Initial raw login event data was cleaned by handling missing values, standardizing entries (e.g., `request_ip_state`), and removing irrelevant columns. Specifically, 2 records with missing `client_country` were dropped, and `request_ip_state` missing values were imputed.
+*   **Data Preparation**: Initial raw login event data was cleaned by handling missing values, standardizing entries, and removing irrelevant columns. 
 *   **Feature Creation**: Key new features were engineered from existing data to enhance analytical depth:
     *   `time_of_day`: Hour of login for temporal pattern analysis.
     *   `country_category`: Binary classification of login origin as 'United States' (1) or 'International' (0).
