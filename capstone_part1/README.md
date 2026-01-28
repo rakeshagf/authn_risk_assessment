@@ -13,7 +13,7 @@ https://github.com/rakeshagf/authn_risk_assessment/blob/main/capstone_part1/auth
 - The CSV used in this analysis is data/authn_event_logs.csv (anonymized and pre-processed).
 
 #### Executive summary
-This repository contains the exploratory data analysis (EDA) and initial modeling for an authentication risk assessment capstone project. The goal is to detect anomalous (high-risk) login attempts and build models that can help flag risky authentications in production.
+This repository contains the exploratory data analysis (EDA) and initial modeling for an authentication risk assessment capstone project. The goal is to detect anomalous (high-risk) login attempts and build models that can help identify risky authentication event for appropriate handling.
 
 Project structure and scope
 - Part 1 (this notebook): EDA, feature engineering, exploratory unsupervised models (K-Means, Isolation Forest), and an initial supervised model (Random Forest) trained to predict the anomaly labels produced by Isolation Forest.
