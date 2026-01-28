@@ -1,33 +1,50 @@
 # CapStone Project : Module 20 - Initial Report and EDA
-predicting user login risk (low/high) for a new authentication attempt
+Login Event Risk Assessment
 
 ### Project Title
+Login Event Risk Assessment
 
 #### Executive summary
+Part 1: Exploratory Data Analysis (EDA) and Basic Modeling:
 
-#### Rationale
-Why should anyone care about this question?
+The primary objective of Exploratory Data Analysis (EDA) is to transform raw login event data into a clean, structured, and feature-engineered format suitable for developing machine learning models. These models will be used to predict whether a login attempt is normal or anomalous. The ultimate goal is to enhance authentication risk assessment by leveraging insights that enforces decisions on whether to allow a user to log in with regular authentication, require additional strong authentication, or block/alert the authentication attempt. 
+EDA lays the groundwork for building robust models that can accurately assess authentication risk and support a secure and efficient user experience.
+
+Basic Modeling
+
+K Means and Isolation Forest, Random Forest -> Results
+
+Part 2 (final): Tuning + Random Forest and One Class SVM
 
 #### Research Question
-What are you trying to answer?
+predicting user login risk (low/high) for a new authentication attempt
+
+#### Rationale
+These models will be used to predict whether a login attempt is normal or anomalous. The ultimate goal is to enhance authentication risk assessment by providing insights to decide on whether to allow a user to log in with regular authentication, require additional strong authentication, or block/alert the authentication attempt.
 
 #### Data Sources
-What data will you use to answer you question?
+I have access to customer login data from Customer Identity and Access Management (IAM) event logs.  I have removed unnecessary columns, anonymized (including synthetic values) data for select fields. CSV file containing login events is named 'authn_event_logs.csv' and added to data folder.
 
 #### Methodology
-What methods are you using to answer the question?
+I plan to leverage mix of unsupervised and supervised learning techniques for this exercise: 
+
+Initial 2 techniques are intended to develop a new feature to label risk assessment outcome which will be used for Random Forest model. 
+K-Means Clustering (Unsupervised)
+Isolation Forest (Supervised)
+
+These two techniques will be used to predict risk assesment outcomes for new/unseen login events:
+Random Forest (Supervised)
+One-Class SVM (Unsupervised)
+
 
 #### Results
 What did your research find?
 
-#### Next steps
-What suggestions do you have for next steps?
 
 #### Outline of project
 
 - [Link to notebook 1]()
-- [Link to notebook 2]()
-- [Link to notebook 3]()
 
 
-##### Contact and Further Information
+#### Next steps
+In final part of capstone project (seperate notebook file), we will revisit Isolation Forest model. In addition to updating Isolation Forest model, we will tune Random Forest parameters and implement One Class SVM. 
