@@ -28,10 +28,6 @@ AI/ML models can be used to predict whether a login attempt is normal or anomalo
 
 #### Methodology
 1. EDA and feature engineering to convert raw logs into model-ready features:
-   - `time_of_day`: hour of login (0–23)
-   - `country_category`: 1 = United States, 0 = International
-   - `state_category`: categorical encoding for US/state granularity 
-   - `device_category`: 1 = Computer, 0 = Mobile/Tablet
 
 2. Unsupervised techniques to identify anomalous behavior:
    - K-Means for behavioral segmentation
