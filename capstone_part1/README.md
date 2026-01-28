@@ -16,14 +16,14 @@ https://github.com/rakeshagf/authn_risk_assessment/blob/main/capstone_part1/auth
 This repository contains the exploratory data analysis (EDA) and initial modeling for an authentication risk assessment capstone project. The goal is to detect anomalous (high-risk) login attempts and build models that can help identify risky authentication event for appropriate handling.
 
 Project structure and scope
-- Part 1 (this notebook): EDA, feature engineering, exploratory unsupervised models (K-Means, Isolation Forest), and an initial supervised model (Random Forest) trained to predict the anomaly labels produced by Isolation Forest.
-- Part 2 (final): Model tuning, additional supervised/unsupervised approaches (e.g., One-Class SVM), and evaluation on holdout data.
+- Part 1 (this notebook): EDA, feature engineering, exploratory unsupervised models (K-Means, Isolation Forest), and an initial supervised model (Random Forest) trained using anomaly labels produced by Isolation Forest.
+- Part 2 (final): Model tuning, additional supervised/unsupervised approaches (One-Class SVM), and final report.
 
 #### Research question
 - Predict whether a new user login attempt is low-risk (normal) or high-risk (anomalous).
 
 #### Rationale
-AI/ML models will be used to predict whether a login attempt is normal or anomalous. The ultimate goal is to enhance authentication risk assessment by providing insights to decide on whether to allow a user to log in with regular authentication, require additional strong authentication, or block/alert the authentication attempt.
+AI/ML models can be used to predict whether a login attempt is normal or anomalous. The ultimate goal is to enhance authentication risk assessment and leveraging insights to decide on whether to allow a user to log in with regular authentication, require additional strong authentication, or block/alert the authentication attempt.
 
 
 #### Methodology
