@@ -10,7 +10,7 @@ Authentication Risk Assessment
 
 #### Link of notebook file
 
-https://github.com/rakeshagf/authn_risk_assessment/blob/main/authn_risk_assessment_part1.ipynb 
+https://github.com/rakeshagf/authn_risk_assessment/blob/main/capstone_part1/authn_risk_assessment_part1.ipynb
 
 #### Executive summary
 Goal of capstone project is to analyze (EDA steps) data, train models and predict whether a login attempt is normal or anomalous.
