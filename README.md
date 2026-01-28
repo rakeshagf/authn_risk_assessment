@@ -1,4 +1,4 @@
-# CapStone Project 
+# Capstone Project 
 
 ### Project Title
 Authentication Risk Assessment
