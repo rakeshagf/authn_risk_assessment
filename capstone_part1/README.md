@@ -22,10 +22,10 @@ Research question
 
 Methodology
 1. EDA and feature engineering to convert raw logs into model-ready features:
-   - time_of_day: hour of login (0–23)
-   - country_category: 1 = United States, 0 = International
-   - state_category: categorical encoding for US/state granularity (Top-20, Remaining, Unknown, International, Unknown International)
-   - device_category: 1 = Computer, 0 = Mobile/Tablet
+   - `time_of_day`: hour of login (0–23)
+   - `country_category`: 1 = United States, 0 = International
+   - `state_category`: categorical encoding for US/state granularity (Top-20, Remaining, Unknown, International, Unknown International)
+   - `device_category`: 1 = Computer, 0 = Mobile/Tablet
 
 2. Unsupervised techniques to identify anomalous behavior:
    - K-Means for behavioral segmentation
@@ -37,7 +37,7 @@ Methodology
 Key findings (summary)
 - K-Means (k=2) separated events primarily by device type (Computer vs Mobile/Tablet) with different typical login hours.
 - Isolation Forest identified a small set of outliers that were more likely to originate from international locations and less-common US states, and that had a slightly different time-of-day distribution.
-- A Random Forest trained to predict Isolation Forest labels achieved very high performance on the dataset used in Part 1; feature importance indicated state_category and time_of_day were the most informative features.
+- A Random Forest trained to predict Isolation Forest labels achieved very high performance on the dataset used in Part 1; feature importance indicated `state_category` and `time_of_day` were the most informative features.
 
 Notes and caveats
 - The dataset has been anonymized and/or synthetically altered for privacy—results are illustrative.
