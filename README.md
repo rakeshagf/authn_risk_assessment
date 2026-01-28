@@ -19,6 +19,7 @@ CSV file containing login events is named 'authn_event_logs.csv' and added to da
 #### Executive summary
 Goal of capstone project is to analyze (EDA steps) data, train models and predict whether a login attempt is normal or anomalous.
 Capstone project submission has been split into 2 parts:
+
 Part 1: Exploratory Data Analysis (EDA) and Basic Modeling:
 
 The objective of Exploratory Data Analysis (EDA) is to transform raw login event data into a clean, structured, and feature-engineered format suitable for developing machine learning models. These models will be used to predict whether a login attempt is normal or anomalous. The ultimate goal is to enhance authentication risk assessment by leveraging insights that enforces decisions on whether to allow a user to log in with regular authentication, require additional strong authentication, or block/alert the authentication attempt. 
