@@ -1,0 +1,86 @@
+# CapStone Project : Module 20 - Initial Report and EDA
+
+### Project Title
+Authentication Risk Assessment
+
+**Author**
+
+Rakesh Meena
+
+
+#### Link of notebook file
+
+https://github.com/rakeshagf/authn_risk_assessment/blob/main/capstone_part1/authn_risk_assessment_part1.ipynb
+
+#### Data Sources
+Source of dataset is customer login event logs from Customer Identity and Access Management (IAM) system.  I have removed unnecessary columns, anonymized (including synthetic values) data for select [...]
+CSV file containing login events is named 'authn_event_logs.csv' and added to data folder.
+
+#### Executive summary
+Goal of capstone project is to analyze (EDA steps) data, train models and predict whether a login attempt is normal or anomalous.
+Capstone project submission has been split into 2 parts:
+
+Part 1: Exploratory Data Analysis (EDA) and Basic Modeling:
+
+The objective of Exploratory Data Analysis (EDA) is to transform raw login event data into a clean, structured, and feature-engineered format suitable for developing machine learning models. These cod[...] 
+
+Basic Modeling
+
+K Means and Isolation Forest, Random Forest -> Results
+
+Part 2 (final): Tuning + Random Forest and One Class SVM
+
+#### Research Question
+predicting user login risk (low/high) for a new authentication attempt
+
+#### Rationale
+These models will be used to predict whether a login attempt is normal or anomalous. The ultimate goal is to enhance authentication risk assessment by providing insights to decide on whether to allow [...] 
+
+#### Methodology
+I plan to leverage mix of unsupervised and supervised learning techniques for this exercise:
+
+Initial 2 techniques are intended to develop a new feature to label risk assessment outcome which will be used for Random Forest model. 
+K-Means Clustering (Unsupervised)
+Isolation Forest (Supervised)
+
+These two techniques will be used to predict risk assesment outcomes for new/unseen login events:
+Random Forest (Supervised)
+One-Class SVM (Unsupervised)
+
+
+#### Results
+# Summary of Key Findings
+
+This part of project involved a comprehensive Exploratory Data Analysis (EDA) and initial unsupervised modeling to identify patterns and potential anomalies in login event data. The key findings are a[...]  
+
+### 1. Data Cleaning and Feature Engineering
+*   **Data Preparation**: Initial raw login event data was cleaned by handling missing values, standardizing entries, and removing irrelevant columns. 
+*   **Feature Creation**: Key new features were engineered from existing data to enhance analytical depth:
+    *   `time_of_day`: Hour of login for temporal pattern analysis.
+    *   `country_category`: Binary classification of login origin as 'United States' (1) or 'International' (0).
+    *   `state_category`: Granular geographical context into 'Top 20 US State' (5), 'Remaining US State' (4), 'Unknown US State' (3), 'International State' (2), and 'Unknown International State' (1).
+    *   `device_category`: Binary representation of device type ('Mobile/Tablet' as 0, 'Computer' as 1).
+
+### 2. K-Means Clustering for Behavioral Segmentation
+*   **Cluster Discovery**: K-Means clustering (2 clusters) effectively segmented login events into two distinct behavioral patterns:
+    *   **Cluster 0 (Larger, ~62% of events)**: Characterized exclusively by 'Computer' logins, with a mean `time_of_day` around 14.86 (2:52 PM), predominantly from the United States and Top 20 US Sta[...]
+    *   **Cluster 1 (Smaller, ~38% of events)**: Characterized exclusively by 'Mobile/Tablet' logins, with a mean `time_of_day` around 13.64 (1:38 PM), also predominantly from the United States and To[...] 
+*   **Key Differentiator**: The most significant factor distinguishing these two K-Means clusters was the `device_category`.
+
+### 3. Isolation Forest for Anomaly Detection
+*   **Model Application**: Isolation Forest was applied to the `time_of_day`, `country_category`, `state_category`, and `device_category` features to detect anomalous login events, using a `contaminat[...]
+*   **Outlier Characteristics (Comparison to Inliers)**: Analysis comparing outliers to inliers revealed significant differentiators:
+    *   **Geographical Context**: Outliers showed a significantly higher proportion from 'International' locations (around 14.14%) and 'Remaining US States' (around 66.86%), while inliers were almost [...]
+    *   **Time of Day**: Outliers had a slightly earlier mean login time (~1:36 PM) compared to inliers (~2:26 PM), suggesting deviations from the most frequent login hours.
+    *   **Device Type**: The device distribution (Computer vs. Mobile/Tablet) was relatively similar between outliers and inliers, indicating it is not a primary distinguishing factor for anomalous be[...]  
+
+### 4. Random Forest Model for Anomaly Prediction
+*   A Random Forest classifier was trained using the features (`time_of_day`, `country_category`, `state_category`, `device_category`) to predict the `anomaly_prediction` labels generated by the Isola[...] 
+*   The Random Forest model achieved **perfect accuracy (1.00)**, with 100% precision, recall, and F1-score for both inlier and outlier classes. This demonstrates that the Random Forest successfully l[...] 
+*   **Feature Importance**: The `state_category` was found to be by far the most important feature, followed by `time_of_day` and `country_category`, while `device_category` had the least importance.
+
+### 5. Conclusion
+The EDA successfully transformed raw login event data into a structured format suitable for anomaly detection. Isolation Forest identified that anomalous login events are predominantly characterized b[...]  
+
+#### Next steps
+In final part of capstone project (seperate notebook file), we will revisit Isolation Forest model. In addition to updating Isolation Forest model, we will tune Random Forest parameters and implement [...] 
