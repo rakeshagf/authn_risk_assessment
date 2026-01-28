@@ -9,10 +9,11 @@ Authentication Risk Assessment
 https://github.com/rakeshagf/authn_risk_assessment/blob/main/authn_risk_assessment_part1.ipynb 
 
 #### Executive summary
+Goal of capstone project is to analyze (EDA steps) data, train models and predict whether a login attempt is normal or anomalous.
+Capstone project submission has been split into 2 parts:
 Part 1: Exploratory Data Analysis (EDA) and Basic Modeling:
 
-The primary objective of Exploratory Data Analysis (EDA) is to transform raw login event data into a clean, structured, and feature-engineered format suitable for developing machine learning models. These models will be used to predict whether a login attempt is normal or anomalous. The ultimate goal is to enhance authentication risk assessment by leveraging insights that enforces decisions on whether to allow a user to log in with regular authentication, require additional strong authentication, or block/alert the authentication attempt. 
-EDA lays the groundwork for building robust models that can accurately assess authentication risk and support a secure and efficient user experience.
+The objective of Exploratory Data Analysis (EDA) is to transform raw login event data into a clean, structured, and feature-engineered format suitable for developing machine learning models. These models will be used to predict whether a login attempt is normal or anomalous. The ultimate goal is to enhance authentication risk assessment by leveraging insights that enforces decisions on whether to allow a user to log in with regular authentication, require additional strong authentication, or block/alert the authentication attempt. 
 
 Basic Modeling
 
