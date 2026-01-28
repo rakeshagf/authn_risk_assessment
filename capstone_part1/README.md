@@ -30,7 +30,7 @@ AI/ML models can be used to predict whether a login attempt is normal or anomalo
 1. EDA and feature engineering to convert raw logs into model-ready features:
    - `time_of_day`: hour of login (0–23)
    - `country_category`: 1 = United States, 0 = International
-   - `state_category`: categorical encoding for US/state granularity (Top-20, Remaining, Unknown, International, Unknown International)
+   - `state_category`: categorical encoding for US/state granularity 
    - `device_category`: 1 = Computer, 0 = Mobile/Tablet
 
 2. Unsupervised techniques to identify anomalous behavior:
@@ -44,11 +44,11 @@ AI/ML models can be used to predict whether a login attempt is normal or anomalo
 Summary of Key Findings
 - K-Means (k=2) separated events primarily by device type (Computer vs Mobile/Tablet) with different typical login hours.
 - Isolation Forest identified a small set of outliers that were more likely to originate from international locations and less-common US states, and that had a slightly different time-of-day distribution.
-- A Random Forest trained to predict Isolation Forest labels achieved very high performance on the dataset used in Part 1; feature importance indicated `state_category` and `time_of_day` were the most informative features.
+- A Random Forest trained to predict Isolation Forest labels achieved good performance; feature importance indicated `state_category` and `time_of_day` were the most informative features.
 
 
 #### Next steps (Part 2/Final Capstone submission)
-- Re-evaluate Isolation Forest settings and parameter tuning.
+- Re-evaluate Isolation Forest settings and parameter tuning (including removal of country_category feature as state_category capture necessary details including country grouping).
 - Tune Random Forest (cross-validation, hyperparameter search).
 - Implement One-Class SVM
 - Final report.
