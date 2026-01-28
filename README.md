@@ -1,8 +1,8 @@
 # CapStone Project : Module 20 - Initial Report and EDA
-Login Event Risk Assessment
+Authentication Risk Assessment
 
 ### Project Title
-Login Event Risk Assessment
+Authentication Risk Assessment
 
 #### Executive summary
 Part 1: Exploratory Data Analysis (EDA) and Basic Modeling:
