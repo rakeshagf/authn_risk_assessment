@@ -41,7 +41,7 @@ AI/ML models will be used to predict whether a login attempt is normal or anomal
    - Random Forest trained on engineered features to predict anomaly labels from Isolation Forest. (Part 2 will include hyperparameter tuning and additional models.)
 
 #### Results
-# Summary of Key Findings
+Summary of Key Findings
 - K-Means (k=2) separated events primarily by device type (Computer vs Mobile/Tablet) with different typical login hours.
 - Isolation Forest identified a small set of outliers that were more likely to originate from international locations and less-common US states, and that had a slightly different time-of-day distribution.
 - A Random Forest trained to predict Isolation Forest labels achieved very high performance on the dataset used in Part 1; feature importance indicated `state_category` and `time_of_day` were the most informative features.
@@ -50,7 +50,7 @@ Notes and caveats
 - The dataset has been anonymized and/or synthetically altered for privacy—results are illustrative.
 - The perfect performance of the Random Forest in Part 1 likely indicates label leakage or an easy separability introduced by the pipeline; Part 2 will investigate proper validation and tuning.
 
-### Next steps (Part 2)
+Next steps (Part 2)
 - Re-evaluate Isolation Forest settings and contamination parameter.
 - Tune Random Forest (cross-validation, hyperparameter search) and add robust evaluation on holdout data.
 - Experiment with One-Class SVM and additional anomaly-detection techniques.
