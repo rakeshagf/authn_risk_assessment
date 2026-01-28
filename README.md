@@ -4,6 +4,10 @@ Authentication Risk Assessment
 ### Project Title
 Authentication Risk Assessment
 
+#### Link of notebook file
+
+https://github.com/rakeshagf/authn_risk_assessment/blob/main/authn_risk_assessment_part1.ipynb 
+
 #### Executive summary
 Part 1: Exploratory Data Analysis (EDA) and Basic Modeling:
 
@@ -39,12 +43,6 @@ One-Class SVM (Unsupervised)
 
 #### Results
 What did your research find?
-
-
-#### Outline of project
-
-- [Link to notebook 1]()
-
 
 #### Next steps
 In final part of capstone project (seperate notebook file), we will revisit Isolation Forest model. In addition to updating Isolation Forest model, we will tune Random Forest parameters and implement One Class SVM. 
