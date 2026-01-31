@@ -1,5 +1,6 @@
-Capstone Project
-**Authentication Risk Assessment Final Report**
+# Capstone Project — Module 24: Final Report
+
+**Authentication Risk Assessment**
 
 ## Problem Statement:
 2.	Provide a well-defined problem statement that clearly articulates the goals, challenges, and potential benefits of your machine learning solution.
