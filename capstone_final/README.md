@@ -1,4 +1,4 @@
-# Capstone Project — Module 24: Final Report
+# Capstone Project (Module 24): Final Report
 
 ## Project Title
 Authentication Risk Assessment
@@ -9,7 +9,15 @@ Author: Rakesh Meena
 
 
 ## Problem Statement:
-2.	Provide a well-defined problem statement that clearly articulates the goals, challenges, and potential benefits of your machine learning solution.
+
+**Goal**: The primary goal is to develop an authentication risk assessment system for a banking application(s) that can accurately classify customer login attempts as 'normal' or 'anomalous' (abnormal).
+
+**Current Challenge**: Traditional authentication methods often rely on static authentication policies, which doesn't offer a great combination of user experience and security. The challenge includes managing the trade-off between false positives (legitimate users inconvenienced with multiple factors) and false negatives (missed security threats).
+
+**Proposed Solution**: Leverage advanced machine learning models, including unsupervised techniques like Isolation Forest and One-Class SVM for anomaly detection, and supervised methods like Random Forest for classification. These models can analyze customer login event data (e.g., time of day, geographical location, device type) to identify patterns indicative of suspicious activity. 
+
+**Potential Benefits**: This machine learning solution aims to enhance security and improving user experience for normal login events.
+Automation of login anomaly detection also reduces the burden on security operations teams, allowing them to focus on investigating high-priority threats rather than sifting through vast amounts of data manually. 
 
 ## Model Outcomes or Predictions:
 4.	Identify the type of learning (classification or regression) and specify the expected output of your selected model. Determine whether supervised or unsupervised learning algorithms will be used.
