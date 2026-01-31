@@ -23,13 +23,25 @@ Automation of login anomaly detection also reduces the burden on security operat
 4.	Identify the type of learning (classification or regression) and specify the expected output of your selected model. Determine whether supervised or unsupervised learning algorithms will be used.
 
 ## Data Acquisition:
-6.	The deliverable at this step is to identify what data you plan to acquire and use with your model. For the best results, data should come from multiple sources and your analysis for including specific data should be clear. Please provide a clear visualization to assess the data’s potential to solve the problem as well.
+- The dataset contains anonymized customer login event logs from a Customer Identity and Access Management (IAM) system. We have already completed Exploratory Data Analysis (EDA) in first part of exercise. 
+- The CSV used in this analysis is data/login_events_final.csv (anonymized and pre-processed); this file was generated in part 1 as a result of EDA and feature engineering.
 
 ## Data Preprocessing/Preparation: 
-For this deliverable, you are tasked with detailing how you cleaned the data for your notebook. 
-a.	What techniques did you use to ensure your data was free of missing values, and inconsistencies? 
-b.	How did you split the data into training and test sets?
-c.	Please include any necessary analysis and encoding steps you took as well.
+
+*   **Data Preparation**: Initial raw login event data was cleaned by handling missing values, standardizing entries, and removing irrelevant columns. Specifically, few records with missing `client_country` were dropped, and `request_ip_state` missing values were imputed.
+*   **Feature Creation**: Key new features were engineered from existing data to enhance analytical depth:
+    *   `time_of_day`: Hour of login for temporal pattern analysis.
+    *   `country_category`: Binary classification of login origin as 'United States' (1) or 'International' (0).
+    *   `state_category`: Granular geographical context into 'Top 15 US State' (5), 'Remaining US State' (4), 'Unknown US State' (3), 'International State' (2), and 'Unknown International State' (1).
+    *   `device_category`: Binary representation of device type ('Mobile/Tablet' as 0, 'Computer' as 1).
+Instead of using one hot encoding, we created new category features for country, state and device to define numeric values for categorization. It helped in keeping number of features low without loss of information. 
+**Data split into training and test sets**
+The data was split into training and test sets using the `train_test_split` function from `sklearn.model_selection`. 
+
+1.  **Features (X)**: The columns `time_of_day`, `state_category`, and `device_category` were selected as input features.
+2.  **Target (y)**: The `risk_category` column, derived from the Isolation Forest predictions, was used as the target variable.
+3.  **Test Size**: 30% of the data (`test_size=0.3`) was allocated for the test set, and the remaining 70% for the training set.
+
 
 ## Modeling: 
 For this deliverable, please document your selection of machine learning algorithms that you selected for your problem statement from the first deliverable.
