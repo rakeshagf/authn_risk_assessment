@@ -41,6 +41,7 @@ The data was split into training and test sets using the `train_test_split` func
 1.  **Features (X)**: The columns `time_of_day`, `state_category`, and `device_category` were selected as input features.
 2.  **Target (y)**: The `risk_category` column, derived from the Isolation Forest predictions, was used as the target variable.
 3.  **Test Size**: 30% of the data (`test_size=0.3`) was allocated for the test set, and the remaining 70% for the training set.
+We divided events almost equally in train and test data sets as per risk categorization.
 
 
 ## Modeling: 
