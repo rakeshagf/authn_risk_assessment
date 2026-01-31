@@ -51,3 +51,5 @@ For this deliverable, please document your selection of machine learning algorit
 Share your model evaluation here. What types of models did you consider for your problem (classification, regression, unsupervised)?  Articulate the evaluation metrics you used and how you determined which model was most optimal for your problem.
 
 ## Next Steps: 
+We are constrained with data and computation resources (also time to some extent) in this project. In this exercise, we have looked at select features and machine learning was based on outliers identified in a two month dataset. 
+
