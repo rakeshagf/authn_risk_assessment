@@ -12,7 +12,7 @@ Author: Rakesh Meena
 
 **Goal**: The primary goal is to develop an authentication risk assessment system for a banking application(s) that can accurately classify customer login attempts as 'normal' or 'anomalous' (abnormal).
 
-**Current Challenge**: Traditional authentication methods often rely on static authentication policies, which doesn't offer a great combination of user experience and security. The challenge includes managing the trade-off between false positives (legitimate users inconvenienced with multiple factors) and false negatives (missed security threats).
+**Challenge (without ML based solution)**: Traditional authentication methods often rely on static authentication policies, which doesn't offer a great combination of user experience and security. The challenge includes managing the trade-off between false positives (legitimate users inconvenienced with multiple factors) and false negatives (missed security threats).
 
 **Proposed Solution**: Leverage advanced machine learning models, including unsupervised techniques like Isolation Forest and One-Class SVM for anomaly detection, and supervised methods like Random Forest for classification. These models can analyze customer login event data (e.g., time of day, geographical location, device type) to identify patterns indicative of suspicious activity. 
 
