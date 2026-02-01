@@ -20,7 +20,37 @@ Author: Rakesh Meena
 Automation of login anomaly detection also reduces the burden on security operations teams, allowing them to focus on investigating high-priority threats rather than sifting through vast amounts of data manually. 
 
 ## Model Outcomes or Predictions:
-4.	Identify the type of learning (classification or regression) and specify the expected output of your selected model. Determine whether supervised or unsupervised learning algorithms will be used.
+
+We explored three machine learning models for authentication risk assessment: Isolation Forest, Random Forest, and One-Class SVM.
+
+### 1. Isolation Forest
+Unsupervised anomaly detection, used here to identify initial anomalies and generate the `risk_category` target variable.
+
+### 2. Random Forest Model
+Supervised classification, trained to predict the `risk_category` defined by the Isolation Forest.
+
+### 3. One-Class SVM (OCSVM) Model
+Unsupervised anomaly detection, aiming to learn the boundary of 'normal' behavior and flag deviations.
+
+## Which Model and Combination is Best Suited for this Problem?
+
+A hybrid solution is best suited for this problem, combining the strengths of unsupervised and supervised approaches while addressing their limitations:
+1.  **Primary Anomaly Detection (Unsupervised - OCSVM or Refined Isolation Forest)**:
+    *   **Recommendation**: The **One-Class SVM** is better suited for initial, independent anomaly detection due to its unsupervised nature and more realistic performance profile. 
+  
+2.  **Efficient Classification of Known Patterns (Supervised - Random Forest)**:
+    *   **Recommendation**: Once a robust, independently derived, and potentially human-validated set of `risk_category` labels is available, a **Random Forest model** can be highly effective for *rapid and accurate classification of these established anomaly patterns*. This allows for quick automated responses to known threats.
+    *   Labels for supervised training must be generated *independently* from the test data.
+
+### Optimal Combination Strategy:
+
+*   **Tiered Approach**: Implement a multi-stage system:
+    1.  An **unsupervised model** (OCSVM with optimized parameters) serves as the primary anomaly detector to flag any deviation from normal behavior.
+    2.  The alerts from unsupervised layer can then be fed into a **human-in-the-loop system** for validation. This feedback loop is crucial for building a truly labeled dataset over time.
+    3.  As sufficient **human-validated anomaly labels** become available, a **supervised model** like Random Forest can be trained on this clean, independent data. This supervised model can then be used for faster, more precise, and automated responses to frequent types of anomalies.
+
+*   **Enhanced Feature Engineering**: Integrate user-specific baseline profiles (`user_id`'s typical time of day for login, location, device, typical IP pattern per User), IP reputation data, and sequential pattern analysis to provide richer context for both unsupervised and supervised models.
+
 
 ## Data Acquisition:
 - The dataset contains anonymized customer login event logs from a Customer Identity and Access Management (IAM) system. We have already completed Exploratory Data Analysis (EDA) in first part of exercise. 
