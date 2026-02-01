@@ -13,7 +13,7 @@ https://github.com/rakeshagf/authn_risk_assessment/blob/main/capstone_final/auth
 
 ## Problem Statement:
 
-**Goal**: The primary goal is to develop an authentication risk assessment system for a banking application(s) that can accurately classify customer login attempts as 'normal' or 'anomalous' (abnormal).
+**Goal**: The primary goal is to develop an authentication risk assessment system for customer facing banking applications that can accurately classify customer login attempts as 'normal' or 'anomalous' (abnormal).
 
 **Challenge (without ML based solution)**: Traditional authentication methods often rely on static authentication policies, which doesn't offer a great combination of user experience and security. The challenge includes managing the trade-off between false positives (legitimate users inconvenienced with multiple factors) and false negatives (missed security threats).
 
