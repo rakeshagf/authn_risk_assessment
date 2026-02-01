@@ -26,11 +26,11 @@ Automation of login anomaly detection also reduces the burden on security operat
 
 We explored three machine learning models (classification type, mix of unsupervised and supervised) for authentication risk assessment: Isolation Forest, Random Forest, and One-Class SVM. KMeans was leveraged in first part of exercise to identify clusters, it was dropped in final part (Isolation Forest does a better job for anomaly detection problem).  
 
-**Isolation Forest**: Unsupervised anomaly detection, used here to identify initial anomalies and generate the `risk_category` target variable.
+**Isolation Forest**: Unsupervised anomaly detection, used to identify initial anomalies and generate the `risk_category` target variable.
 
 **Random Forest Model**: Supervised classification, trained to predict the `risk_category` defined by the Isolation Forest.
 
-**One-Class SVM (OCSVM) Model**: Unsupervised anomaly detection, aiming to learn the boundary of 'normal' behavior and flag deviations.
+**One-Class SVM (OCSVM) Model**: Unsupervised anomaly detection, to learn the boundary of 'normal' behavior and flag deviations.
 
 ### Outcome of analysis
 A hybrid solution is best suited for this problem, combining the strengths of unsupervised and supervised approaches while addressing their limitations:
