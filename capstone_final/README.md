@@ -30,9 +30,8 @@ We explored three machine learning models for authentication risk assessment: Is
 **One-Class SVM (OCSVM) Model**: Unsupervised anomaly detection, aiming to learn the boundary of 'normal' behavior and flag deviations.
 
 ### Outcome of analysis
-
 A hybrid solution is best suited for this problem, combining the strengths of unsupervised and supervised approaches while addressing their limitations:
-1.  **Primary Anomaly Detection (Unsupervised - OCSVM or Refined Isolation Forest)**:
+1.  **Primary Anomaly Detection model (Unsupervised - OCSVM or Refined Isolation Forest)**:
     *   **Recommendation**: The **One-Class SVM** is better suited for initial, independent anomaly detection due to its unsupervised nature and more realistic performance profile. 
   
 2.  **Efficient Classification of Known Patterns (Supervised - Random Forest)**:
@@ -40,7 +39,6 @@ A hybrid solution is best suited for this problem, combining the strengths of un
     *   Labels for supervised training must be generated *independently* from the test data.
 
 ### Optimal Combination Strategy:
-
 *   **Tiered Approach**: Implement a multi-stage system:
     1.  An **unsupervised model** (OCSVM with optimized parameters) serves as the primary anomaly detector to flag any deviation from normal behavior.
     2.  The alerts from unsupervised layer can then be fed into a **human-in-the-loop system** for validation. This feedback loop is crucial for building a truly labeled dataset over time.
