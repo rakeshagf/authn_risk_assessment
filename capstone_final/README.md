@@ -19,9 +19,9 @@ Author: Rakesh Meena
 **Potential Benefits**: This machine learning solution aims to enhance security and improving user experience for normal login events.
 Automation of login anomaly detection also reduces the burden on security operations teams, allowing them to focus on investigating high-priority threats rather than sifting through vast amounts of data manually. 
 
-## Model Outcomes or Predictions:
+## Model Selection and Outcomes:
 
-We explored three machine learning models for authentication risk assessment: Isolation Forest, Random Forest, and One-Class SVM.
+We explored three machine learning models (classification type, mix of unsupervised and supervised) for authentication risk assessment: Isolation Forest, Random Forest, and One-Class SVM. KMeans was leveraged in first part of exercise to identify clusters, it was dropped in final part (Isolation Forest does a better job for anomaly detection problem).  
 
 **Isolation Forest**: Unsupervised anomaly detection, used here to identify initial anomalies and generate the `risk_category` target variable.
 
@@ -47,6 +47,7 @@ A hybrid solution is best suited for this problem, combining the strengths of un
 *   **Enhanced Feature Engineering**: Integrate user-specific baseline profiles (`user_id`'s typical time of day for login, location, device, typical IP pattern per User), IP reputation data, and sequential pattern analysis to provide richer context for both unsupervised and supervised models.
 
 
+
 ## Data Acquisition:
 - The dataset contains anonymized customer login event logs from a Customer Identity and Access Management (IAM) system. We have already completed Exploratory Data Analysis (EDA) in first part of exercise. 
 - The CSV used in this analysis is data/login_events_final.csv (anonymized and pre-processed); this file was generated in part 1 as a result of EDA and feature engineering.
@@ -66,14 +67,17 @@ The data was split into training and test sets using the `train_test_split` func
 1.  **Features (X)**: The columns `time_of_day`, `state_category`, and `device_category` were selected as input features.
 2.  **Target (y)**: The `risk_category` column, derived from the Isolation Forest predictions, was used as the target variable.
 3.  **Test Size**: 30% of the data (`test_size=0.3`) was allocated for the test set, and the remaining 70% for the training set.
-We divided events almost equally in train and test data sets as per risk categorization.
 
-
-## Modeling: 
-For this deliverable, please document your selection of machine learning algorithms that you selected for your problem statement from the first deliverable.
+We divided events almost equally in train and test data sets per risk categorization.
 
 ## Model Evaluation: 
-Share your model evaluation here. What types of models did you consider for your problem (classification, regression, unsupervised)?  Articulate the evaluation metrics you used and how you determined which model was most optimal for your problem.
+We evaluated classification models (listed in earlier section), both supervised and unsupervised. We assessed model performance using **F1-score**, **Precision**, **Recall**, and **Confusion Matrices**, prioritizing these for imbalanced anomaly detection.
+No single model was universally optimal. A **hybrid and adaptive approach** is best:
+
+*   **For Novel Anomaly Detection**: **One-Class SVM** (or a refined Isolation Forest) is most optimal, leveraging its unsupervised nature and high anomaly recall to detect new threats.
+*   **For Efficient Classification of Known Patterns**: A **Random Forest model** can be highly optimal for *rapidly classifying established anomaly patterns*, but only with robust, independently derived, and potentially human-validated labels (to avoid data leakage).
+
+The optimal solution is a tiered system combining unsupervised methods for broad detection, human feedback for label refinement, and supervised models for efficient classification of confirmed threats, continuously adapting to new information.
 
 ## Next Steps: 
 We are constrained with data and computation resources (also time to some extent) in this project. In this exercise, we have looked at select features and machine learning was based on outliers identified in a two month dataset. 
