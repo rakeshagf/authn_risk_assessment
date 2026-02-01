@@ -20,7 +20,7 @@ https://github.com/rakeshagf/authn_risk_assessment/blob/main/capstone_final/auth
 **Proposed Solution**: Leverage advanced machine learning models, including unsupervised techniques like Isolation Forest and One-Class SVM for anomaly detection, and supervised methods like Random Forest for classification. These models can analyze customer login event data (e.g., time of day, geographical location, device type) to identify patterns indicative of suspicious activity. 
 
 **Potential Benefits**: This machine learning solution aims to enhance security and improving user experience for normal login events.
-Automation of login anomaly detection also reduces the burden on security operations teams, allowing them to focus on investigating high-priority threats rather than sifting through vast amounts of data manually. 
+Automation of login anomaly detection also reduces the burden on security operations teams, allowing them to focus on investigating high-priority threats. 
 
 ## Model Selection and Outcomes:
 
