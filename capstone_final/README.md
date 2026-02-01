@@ -8,6 +8,11 @@ Author: Rakesh Meena
 #### Notebook Link:
 
 
+## Data Acquisition:
+- The dataset contains anonymized customer login event logs from a Customer Identity and Access Management (IAM) system. We have already completed Exploratory Data Analysis (EDA) in first part of exercise. 
+- The CSV used in this analysis is data/login_events_final.csv (anonymized and pre-processed); this file was generated in part 1 as a result of EDA and feature engineering.
+
+
 ## Problem Statement:
 
 **Goal**: The primary goal is to develop an authentication risk assessment system for a banking application(s) that can accurately classify customer login attempts as 'normal' or 'anomalous' (abnormal).
@@ -47,22 +52,14 @@ A hybrid solution is best suited for this problem, combining the strengths of un
 *   **Enhanced Feature Engineering**: Integrate user-specific baseline profiles (`user_id`'s typical time of day for login, location, device, typical IP pattern per User), IP reputation data, and sequential pattern analysis to provide richer context for both unsupervised and supervised models.
 
 
-
-## Data Acquisition:
-- The dataset contains anonymized customer login event logs from a Customer Identity and Access Management (IAM) system. We have already completed Exploratory Data Analysis (EDA) in first part of exercise. 
-- The CSV used in this analysis is data/login_events_final.csv (anonymized and pre-processed); this file was generated in part 1 as a result of EDA and feature engineering.
-
 ## Data Preprocessing/Preparation: 
 
-*   **Data Preparation**: Initial raw login event data was cleaned by handling missing values, standardizing entries, and removing irrelevant columns. Specifically, few records with missing `client_country` were dropped, and `request_ip_state` missing values were imputed.
-*   **Feature Creation**: Key new features were engineered from existing data to enhance analytical depth:
-    *   `time_of_day`: Hour of login for temporal pattern analysis.
-    *   `country_category`: Binary classification of login origin as 'United States' (1) or 'International' (0).
-    *   `state_category`: Granular geographical context into 'Top 15 US State' (5), 'Remaining US State' (4), 'Unknown US State' (3), 'International State' (2), and 'Unknown International State' (1).
-    *   `device_category`: Binary representation of device type ('Mobile/Tablet' as 0, 'Computer' as 1).
+*   **Data Preparation**: Initial raw login event data was cleaned by handling missing values, standardizing entries, and removing irrelevant columns. Specifically, few records with missing values were dropped, and missing values for select features were imputed.
+*   **Feature Creation**: Four (time_of_day in hour, country category - US or International, state category and device category - Computer or Mobile/Tablet) new features were engineered from existing data to enhance analytical depth:
+    *   `state_category` grouped following categories - 'Top 15 US State' (5), 'Remaining US State' (4), 'Unknown US State' (3), 'International State' (2), and 'Unknown International State' (1).
 Instead of using one hot encoding, we created new category features for country, state and device to define numeric values for categorization. It helped in keeping number of features low without loss of information. 
 **Data split into training and test sets**
-The data was split into training and test sets using the `train_test_split` function from `sklearn.model_selection`. 
+The data was split into training and test sets: 
 
 1.  **Features (X)**: The columns `time_of_day`, `state_category`, and `device_category` were selected as input features.
 2.  **Target (y)**: The `risk_category` column, derived from the Isolation Forest predictions, was used as the target variable.
