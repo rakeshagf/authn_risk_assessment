@@ -6,7 +6,7 @@ Authentication Risk Assessment
 Author: Rakesh Meena
 
 #### Notebook Link:
-
+https://github.com/rakeshagf/authn_risk_assessment/blob/main/capstone_final/authn_risk_assessment_final.ipynb
 
 ## Data Acquisition:
 - The dataset contains anonymized customer login event logs from a Customer Identity and Access Management (IAM) system. We have already completed Exploratory Data Analysis (EDA) in first part of exercise. 
