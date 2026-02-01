@@ -7,7 +7,7 @@
 #### Notebook Link:
 https://github.com/rakeshagf/authn_risk_assessment/blob/main/capstone_final/authn_risk_assessment_final.ipynb
 
-## Data Acquisition:
+## Data:
 - The dataset contains anonymized customer login event logs from a Customer Identity and Access Management (IAM) system. We have already completed Exploratory Data Analysis (EDA) in first part of exercise. 
 - The CSV used in this analysis is stored in data folder and named login_events_final.csv; this file was generated in part 1 as a result of EDA and feature engineering.
 
