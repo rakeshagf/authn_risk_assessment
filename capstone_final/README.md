@@ -80,5 +80,7 @@ No single model was universally optimal. A **hybrid and adaptive approach** is b
 The optimal solution is a tiered system combining unsupervised methods for broad detection, human feedback for label refinement, and supervised models for efficient classification of confirmed threats, continuously adapting to new information.
 
 ## Next Steps: 
-We are constrained with data and computation resources (also time to some extent) in this project. In this exercise, we have looked at select features and machine learning was based on outliers identified in a two month dataset. 
+We are constrained with data and computation resources (also time to some extent) in this project. In this exercise, we have looked at subset of login event features and machine learning was based on analysis on a two month events dataset. 
+As per learning from exercise, combining the strengths of One-Class SVM (for novel anomalies) and supervised models like Random Forest (for established patterns) is the best approach for risk assessment for login events data. 
+A better system should include user-specific baseline profiles, external threat intelligence (e.g. IP reputation), and a "human-in-the-loop" feedback mechanism for continuous improvement, dynamic threshold adjustment, and efficient false positive management.
 
