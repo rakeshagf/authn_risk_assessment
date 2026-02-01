@@ -1,6 +1,6 @@
 # Capstone Project (Module 24): Final Report
 
-**Project Title** Authentication Risk Assessment
+**Project Title**: Authentication Risk Assessment
 
 **Author**: Rakesh Meena
 
@@ -74,9 +74,8 @@ The data was split into training and test sets:
 We divided events almost equally in train and test data sets per risk categorization.
 
 
-
 ## Next Steps: 
-We have been constrained with data and computation resources (also time to some extent) in this project. In this exercise, we have looked at subset of login event features and machine learning was based on analysis on a two month events dataset only. 
+We have been constrained with data and computation resources (also time to some extent) in this project. In this exercise, we looked at subset of login event features and analyis was based on a two month events dataset only. 
 * As per learning from exercise, combining the strengths of One-Class SVM (for novel anomalies) and supervised models like Random Forest (for established patterns) is the best approach for risk assessment for login events data. 
 * A better system should include user-specific baseline profiles, external threat intelligence (e.g. IP reputation), and a "human-in-the-loop" feedback mechanism for continuous improvement, dynamic threshold adjustment, and efficient false positive management.
 
