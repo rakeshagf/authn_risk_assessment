@@ -51,6 +51,14 @@ A hybrid solution is best suited for this problem, combining the strengths of un
 
 *   **Enhanced Feature Engineering**: Integrate user-specific baseline profiles (`user_id`'s typical time of day for login, location, device, typical IP pattern per User), IP reputation data, and sequential pattern analysis to provide richer context for both unsupervised and supervised models.
 
+## Model Evaluation: 
+We evaluated classification models (listed in earlier section), both supervised and unsupervised. We assessed model performance using **F1-score**, **Precision**, **Recall**, and **Confusion Matrices**, prioritizing these for imbalanced anomaly detection.
+No single model was universally optimal. A **hybrid and adaptive approach** is best:
+
+*   **For Novel Anomaly Detection**: **One-Class SVM** (or a refined Isolation Forest) is most optimal, leveraging its unsupervised nature and high anomaly recall to detect new threats.
+*   **For Efficient Classification of Known Patterns**: A **Random Forest model** can be highly optimal for *rapidly classifying established anomaly patterns*, but only with robust, independently derived, and potentially human-validated labels (to avoid data leakage).
+
+The optimal solution is a tiered system combining unsupervised methods for broad detection, human feedback for label refinement, and supervised models for efficient classification of confirmed threats, continuously adapting to new information.
 
 ## Data Preprocessing/Preparation: 
 
@@ -67,17 +75,10 @@ The data was split into training and test sets:
 
 We divided events almost equally in train and test data sets per risk categorization.
 
-## Model Evaluation: 
-We evaluated classification models (listed in earlier section), both supervised and unsupervised. We assessed model performance using **F1-score**, **Precision**, **Recall**, and **Confusion Matrices**, prioritizing these for imbalanced anomaly detection.
-No single model was universally optimal. A **hybrid and adaptive approach** is best:
 
-*   **For Novel Anomaly Detection**: **One-Class SVM** (or a refined Isolation Forest) is most optimal, leveraging its unsupervised nature and high anomaly recall to detect new threats.
-*   **For Efficient Classification of Known Patterns**: A **Random Forest model** can be highly optimal for *rapidly classifying established anomaly patterns*, but only with robust, independently derived, and potentially human-validated labels (to avoid data leakage).
-
-The optimal solution is a tiered system combining unsupervised methods for broad detection, human feedback for label refinement, and supervised models for efficient classification of confirmed threats, continuously adapting to new information.
 
 ## Next Steps: 
-We have been constrained with data and computation resources (also time to some extent) in this project. In this exercise, we have looked at subset of login event features and machine learning was based on analysis on a two month events dataset. 
+We have been constrained with data and computation resources (also time to some extent) in this project. In this exercise, we have looked at subset of login event features and machine learning was based on analysis on a two month events dataset only. 
 * As per learning from exercise, combining the strengths of One-Class SVM (for novel anomalies) and supervised models like Random Forest (for established patterns) is the best approach for risk assessment for login events data. 
 * A better system should include user-specific baseline profiles, external threat intelligence (e.g. IP reputation), and a "human-in-the-loop" feedback mechanism for continuous improvement, dynamic threshold adjustment, and efficient false positive management.
 
